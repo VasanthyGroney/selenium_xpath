@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 import time
 
 # Adjust the path to where your chromedriver is located
-service = Service('/usr/local/bin/chromedriver')
-driver = webdriver.Chrome(service=service)
+# service = Service('/usr/local/bin/chromedriver')
+driver = webdriver.Chrome()
 
 # Replace this with your actual HTML file path
 driver.get('file:///Users/vasantymarshalgmail.com/Documents/complete flask/Selenium Locators_XPath/sample.html')
@@ -13,8 +13,9 @@ driver.get('file:///Users/vasantymarshalgmail.com/Documents/complete flask/Selen
 # Example actions using CSS selectors
 input_field = driver.find_element(By.CSS_SELECTOR, '#inputField')
 input_field.send_keys('Hello, Selenium with CSS!')
+time.sleep(5)
 
-submit_button = driver.find_element(By.CSS_SELECTOR, 'input[type="submit"]')
+submit_button = driver.find_element(By.CSS_SELECTOR, "#submitButton")
 submit_button.click()
 
 # Wait for a bit to see the result
